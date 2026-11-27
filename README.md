@@ -45,6 +45,44 @@ databases separate from existing Pi indexes. Run the same command again for an
 incremental refresh. Both clients use the same index for the same checkout on
 the same host. Automatic refresh is outside this prototype.
 
+### Set up or refresh from VS Code
+
+To run setup from VS Code without adding a task to each checkout, open the
+Command Palette and choose **Tasks: Open User Tasks**. Add this object to the
+`tasks` array, replacing the script path with the absolute path to your copy of
+this plugin:
+
+```json
+{
+  "label": "Copilot Indexing: Set Up / Refresh",
+  "type": "process",
+  "command": "/bin/bash",
+  "args": [
+    "/absolute/path/to/copilot-plugin-indexing/setup.sh",
+    "--workspace",
+    "${workspaceFolder}"
+  ],
+  "problemMatcher": [],
+  "presentation": {
+    "reveal": "always",
+    "panel": "dedicated"
+  }
+}
+```
+
+Open the Git checkout root as a single-folder workspace, then choose
+**Tasks: Run Task** and select **Copilot Indexing: Set Up / Refresh**. The first
+run prepares the toolchain and index; later runs incrementally refresh it. The
+task shows setup output and errors in the terminal. For a multi-root workspace,
+open the desired checkout root separately so the task has an unambiguous
+workspace folder.
+
+The first run may download dependencies and model files and may create
+`.cocoindex_code` and update the checkout's `.gitignore`, as described above.
+If you use `COPILOT_INDEXING_HOME`, make sure VS Code and this task use the same
+absolute value. This task does not install the plugin in VS Code or refresh the
+index automatically.
+
 ## Load the plugin
 
 - **Copilot CLI 1.0.114** — launch in the prepared checkout with
