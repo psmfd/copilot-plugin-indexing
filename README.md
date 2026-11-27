@@ -11,13 +11,17 @@ it when their profile includes `search_codebase`.
 
 ## Set up CocoIndex
 
-Clone the plugin and run setup as your own user with Python 3.11 or newer on
-macOS or Linux.
+Clone the plugin and run its setup script as your own user with Python 3.11 or
+newer on macOS or Linux.
 
 ```sh
 git clone https://github.com/psmfd/copilot-plugin-indexing.git
-python3 copilot-plugin-indexing/setup.py --workspace /path/to/checkout
+cd copilot-plugin-indexing
+/bin/bash ./setup.sh --workspace /path/to/checkout
 ```
+
+To select a particular Python interpreter, invoke it directly, for example
+`python3.13 ./setup.py --workspace /path/to/checkout`.
 
 Setup installs `cocoindex-code[full]==0.2.35` into an isolated virtual
 environment. To reuse a compatible pipx or virtual environment installation on
