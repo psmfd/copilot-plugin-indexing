@@ -1,0 +1,6 @@
+{
+  "name": "copilot-indexing",
+  "version": "0.1.0",
+  "description": "Local CocoIndex semantic code search for GitHub Copilot",
+  "extensions": "extensions"
+}
