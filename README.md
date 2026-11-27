@@ -71,7 +71,7 @@ absolute path to your copy of this plugin.
 }
 ```
 
-Open the Git checkout root as a single-folder workspace, then choose
+Open the root of a trusted Git checkout as a single-folder workspace, then choose
 **Tasks: Run Task** and select **Copilot Indexing: Set Up / Refresh**. The first
 run prepares the toolchain and index; later runs incrementally refresh it. The
 task shows setup output and errors in the terminal. For a multi-root workspace,
