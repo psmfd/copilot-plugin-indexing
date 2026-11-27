@@ -48,9 +48,10 @@ the same host. Automatic refresh is outside this prototype.
 ### Set up or refresh from VS Code
 
 To run setup from VS Code without adding a task to each checkout, open the
-Command Palette and choose **Tasks: Open User Tasks**. Add this object to the
-`tasks` array, replacing the script path with the absolute path to your copy of
-this plugin:
+Command Palette and choose **Tasks: Open User Tasks**. If VS Code asks for a
+template, choose **Others**. Use the object below in the `tasks` array, replacing
+the sample task if you just created the file. Set the script path to the
+absolute path to your copy of this plugin.
 
 ```json
 {
